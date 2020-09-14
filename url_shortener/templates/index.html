@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mini-url</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  </head>
+  <body>
+    <div class="hero is-fullheight is-light">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-8 is-offset-2">
+                    <h3 class="title has-text-black ">URL Shortening Tool</h3>
+                    <hr style="border: 1px solid #f00" />
+                    <div class="box">
+                        <div class="title has-text-grey is-5">Please enter url to shorten</div>
+                        <form method="POST" action="{{ url_for('short.add_link') }}">
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-large" type="text" name="original_url" placeholder='url to be shortened'>
+                                </div>
+                            </div>
+                            <div class="control">
+                                <button type="submit" class="button is-link is-outlined">Shorten</button>
+                            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

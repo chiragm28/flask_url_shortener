@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mini-url</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  </head>
+  <body>
+    <div class="hero is-fullheight is-light">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-8 is-offset-2">
+                    <h3 class="title has-text-black ">URL Shortening Tool</h3>
+                    <hr style="border: 1px solid #f00" />
+                    <div class="box">
+                        <!-- make changes below -->
+                        <form method="POST" action="{{ url_for('short.add_link') }}">
+                            <div class="field">
+                                <label class="label">Original URL</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="original_url" value="{{ original_url }}" readonly>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Shortened URL</label>
+                                <div class="control">
+                                    <input class="input" id='myInput' type="text" name="original_url" value="{{ url_for('short.redirect_to_url', short_url=new_link, _external=True) }}">
+                                </div>
+                                <br>
+                                <div class="control">
+                                    <button class="button is-link is-outlined" onclick="myFunction()">Copy Url</button>
+                                    <script>
+                                        function myFunction() {
+                                        var copyText = document.getElementById("myInput");
+                                        copyText.select();
+                                        copyText.setSelectionRange(0, 99999)
+                                        document.execCommand("copy");
+                                        alert("Copied the text: " + copyText.value);
+                                        }
+                                    </script>
+                                </div>
+                        </form>
+                        <!-- make changes above -->
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

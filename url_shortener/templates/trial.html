@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mini-url</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  </head>
+  <body>
+    <div class="hero is-fullheight is-light">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-8 is-offset-2">
+                    <h3 class="title has-text-black ">URL Statistics </h3>
+                    <hr style="border: 1px solid #f00" />
+                    <small> The table displays original url, short url and the no. of visits to the short url</small>
+                    <div class="box">
+                        <!-- make changes below -->
+                        <div class="columns is-centered is-half">
+                            <div class="container is-widescreen">
+                                <table class="table is-bordered is-hoverable">
+                                    <thead>
+                                        <tr>
+                                            <th>Original URL</th>
+                                            <th>Short URL</th>
+                                            <th>Visits</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for link in links %}
+                                        <tr>
+                                            <td>{{ link.original_url }}</td>
+                                            <td>{{ url_for('short.redirect_to_url', short_url=link.short_url, _external=True) }}</td>
+                                            <td>{{ link.visits }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- make changes above -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
