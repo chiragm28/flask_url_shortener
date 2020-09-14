@@ -18,7 +18,6 @@ def redirect_to_url(short_url):
 
 
 @short.route("/")
-@requires_auth
 def index():
     return render_template("index.html")
 
