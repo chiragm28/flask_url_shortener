@@ -23,7 +23,6 @@ def index():
 
 
 @short.route("/add_link", methods=["POST"])
-@requires_auth
 def add_link():
     original_url = request.form["original_url"]
     link = Link(original_url=original_url)
