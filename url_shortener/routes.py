@@ -17,7 +17,7 @@ def redirect_to_url(short_url):
     return redirect(link.original_url)
 
 
-@short.route("/")
+@short.route("/#")
 def index():
     return render_template("index.html")
 
