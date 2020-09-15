@@ -2,3 +2,4 @@ Flask
 Flask-SQLAlchemy
 uwsgi
 gunicorn
+psycopg2
