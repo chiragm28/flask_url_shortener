@@ -8,8 +8,8 @@ def check_auth(username, password):
     password combination is valid.
     """
     return (
-        username == current_app.config["ADMIN_USERNAME"]
-        and password == current_app.config["ADMIN_PASSWORD"]
+        username == 'admin' #current_app.config["ADMIN_USERNAME"]
+        and password == 'password' #current_app.config["ADMIN_PASSWORD"]
     )
 
 
